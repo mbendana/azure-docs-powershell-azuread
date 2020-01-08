@@ -27,9 +27,9 @@ This member can be either a user or a group.
 
 ### Example 1: Remove a user from a group
 ```
-PS C:\> $GroupId = Get-MsolGroup -SearchString "MyGroup"
-PS C:\> $UserId = Get-MsolUser -UserPrincipalName "evannarvaez@contoso.com"
-PS C:\> Remove-MsoLGroupMember -GroupObjectId $GroupId -GroupMemberType User -GroupmemberObjectId $UserId
+PS C:\> $Group = Get-MsolGroup -SearchString "MyGroup"
+PS C:\> $User = Get-MsolUser -UserPrincipalName "evannarvaez@contoso.com"
+PS C:\> Remove-MsoLGroupMember -GroupObjectId $Group.ObjectId -GroupMemberType User -GroupmemberObjectId $User.ObjectId
 ```
 This example removes the user evannarvaez@contoso.com from the group named MyGroup.
 
